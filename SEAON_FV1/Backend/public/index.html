@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SEAON ERP</title>
+  <link rel="stylesheet" href="/app/CSS/style.css">
+</head>
+<body>
+  <div class="app-shell">
+    <aside class="sidebar" id="sidebar">
+      <div class="brand"><div class="brand-mark">S</div><div><strong>SEAON ERP</strong><small>Manufacturing & Stock</small></div></div>
+      <nav id="mainNav">
+        <button class="nav-item active" data-page="dashboard"><span>⌂</span> Dashboard</button>
+        <button class="nav-item" data-page="inventory"><span>▦</span> Inventory</button>
+        <button class="nav-item" data-page="orders"><span>▤</span> Orders</button>
+        <button class="nav-item" data-page="production"><span>⚙</span> Production</button>
+        <button class="nav-item" data-page="bom"><span>⌘</span> BOM / Materials</button>
+        <button class="nav-item" data-page="warehouse"><span>▣</span> Warehouse</button>
+        <button class="nav-item" data-page="returns"><span>↩</span> Returns</button>
+        <button class="nav-item" data-page="fifo"><span>◷</span> FIFO Batches</button>
+        <button class="nav-item" data-page="reports"><span>▥</span> Reports</button>
+        <button class="nav-item" data-page="notifications"><span>!</span> Alerts</button>
+      </nav>
+      <div class="sidebar-bottom">
+        <a id="adminLink" class="nav-item link" href="/app/admin.html"><span>⚙</span> Admin Panel</a>
+        <button class="nav-item" id="logoutBtn"><span>↪</span> Logout</button>
+      </div>
+    </aside>
+
+    <main class="main">
+      <header class="topbar">
+        <button class="mobile-menu" id="mobileMenu">☰</button>
+        <div>
+          <h1 id="pageTitle">Dashboard</h1>
+          <p id="pageSubtitle">A simple view of today's operations.</p>
+        </div>
+        <div class="topbar-right">
+          <span id="roleBadge" class="badge neutral">User</span>
+          <span id="userName" class="user-name">User</span>
+          <button class="icon-btn" id="refreshBtn" title="Refresh">↻</button>
+        </div>
+      </header>
+
+      <div id="toastArea" class="toast-area"></div>
+      <div id="page" class="page-content"></div>
+    </main>
+  </div>
+
+  <script src="/app/JS/api.js"></script>
+  <script src="/app/JS/auth.js"></script>
+  <script src="/app/JS/app.js"></script>
+</body>
+</html>

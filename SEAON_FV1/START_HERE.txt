@@ -1,0 +1,41 @@
+SEAON ERP - START HERE
+=======================
+
+WINDOWS USER:
+1. Double-click: run_seaon_windows.bat
+2. Wait for "Starting SEAON ERP..."
+3. Open: http://127.0.0.1:8000/app/login.html
+4. Login:
+   Email: admin@seaon.com
+   Password: Admin@123
+
+STOP THE APP:
+- Go to the black command window running SEAON.
+- Press Ctrl+C.
+
+ADMIN PANEL:
+http://127.0.0.1:8000/app/admin.html
+
+DATABASE:
+Backend/seaon.db
+
+IMPORTANT:
+Do not open the HTML file directly from Windows Explorer.
+Always start app.py / run_seaon_windows.bat first, because Django serves
+the frontend and API together.
+
+LOGIN TROUBLESHOOTING:
+- This build initializes Django before running migrations.
+- If you previously ran an older broken build, stop the server and run:
+  python app.py
+- Do not open login.html directly from Windows Explorer.
+- Always use http://127.0.0.1:8000/app/login.html
+
+UPDATED WORKFLOW FEATURES:
+- Orders check finished stock or BOM component availability before creation.
+- Manufactured orders automatically create a production job and open the Production screen.
+- Readymade orders deduct finished stock at creation.
+- Orders include New Order, In Production, Packed and Dispatched filters.
+- BOM starts with a product selector; select a product to edit its material list.
+- Inventory has add/edit/delete product actions and stock adjustment/receiving.
+- Notifications are stored in-app. Admin Panel includes Logo & Branding settings.

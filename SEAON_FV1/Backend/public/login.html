@@ -1,0 +1,40 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SEAON ERP - Sign In</title>
+  <link rel="stylesheet" href="/app/CSS/style.css">
+</head>
+<body class="login-page">
+  <main class="login-card">
+    <div class="brand center"><div class="brand-mark">S</div><div><strong>SEAON ERP</strong><small>Manufacturing & Stock</small></div></div>
+    <h1>Welcome back</h1>
+    <p class="muted">Sign in to manage orders, production, inventory and warehouse operations.</p>
+    <form id="loginForm">
+      <label>Email<input id="email" type="email" value="admin@seaon.com" required></label>
+      <label>Password<div class="password-row"><input id="password" type="password" value="Admin@123" required><button type="button" id="showPassword">Show</button></div></label>
+      <button class="btn primary wide" id="loginBtn" type="submit">Sign in</button>
+      <div id="loginError" class="error-box hidden"></div>
+    </form>
+    <div class="demo-box"><strong>Demo administrator</strong><br>admin@seaon.com<br>Admin@123</div>
+  </main>
+  <script src="/app/JS/api.js"></script>
+  <script src="/app/JS/auth.js"></script>
+  <script>
+  document.addEventListener("DOMContentLoaded",()=>{
+    if(Auth.isAuthenticated()){location.href="/app/index.html";return;}
+    document.getElementById("showPassword").onclick=()=>{
+      const p=document.getElementById("password"); p.type=p.type==="password"?"text":"password";
+    };
+    document.getElementById("loginForm").onsubmit=async e=>{
+      e.preventDefault();
+      const btn=document.getElementById("loginBtn"), err=document.getElementById("loginError");
+      btn.disabled=true; btn.textContent="Signing in..."; err.classList.add("hidden");
+      try { await Auth.login(email.value.trim(),password.value); location.href="/app/index.html"; }
+      catch(ex){ err.textContent=ex.message||"Unable to sign in."; err.classList.remove("hidden"); btn.disabled=false; btn.textContent="Sign in"; }
+    };
+  });
+  </script>
+</body>
+</html>

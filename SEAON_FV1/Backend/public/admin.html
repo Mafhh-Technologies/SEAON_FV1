@@ -1,0 +1,35 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>SEAON Admin</title>
+  <link rel="stylesheet" href="/app/CSS/style.css">
+</head>
+<body>
+<div class="app-shell">
+  <aside class="sidebar">
+    <div class="brand"><div class="brand-mark">S</div><div><strong>SEAON Admin</strong><small>System control panel</small></div></div>
+    <nav id="adminNav">
+      <button class="nav-item active" data-section="overview">⌂ Overview</button>
+      <button class="nav-item" data-section="users">♙ Users</button>
+      <button class="nav-item" data-section="roles">⚿ Roles & Permissions</button>
+      <button class="nav-item" data-section="branding">▣ Logo & Branding</button>
+      <button class="nav-item" data-section="stock">▦ Imported Stock</button>
+      <button class="nav-item" data-section="audit">☷ Audit Log</button>
+    </nav>
+    <div class="sidebar-bottom">
+      <a class="nav-item link" href="/app/index.html">← Back to ERP</a>
+      <button class="nav-item" id="adminLogout">↪ Logout</button>
+    </div>
+  </aside>
+  <main class="main">
+    <header class="topbar"><div><h1>Administration</h1><p>Create users, control access and inspect system activity.</p></div><span id="adminUser" class="badge blue"></span></header>
+    <div id="adminToast" class="toast-area"></div>
+    <div id="adminPage" class="page-content"></div>
+  </main>
+</div>
+<script src="/app/JS/api.js"></script>
+<script src="/app/JS/auth.js"></script>
+<script src="/app/JS/admin.js"></script>
+</body>
+</html>
